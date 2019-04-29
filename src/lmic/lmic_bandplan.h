@@ -43,6 +43,8 @@
 # include "lmic_bandplan_as923.h"
 #elif defined(CFG_kr921)
 # include "lmic_bandplan_kr921.h"
+#elif defined(CFG_eu433)
+# include "lmic_bandplan_eu433.h"
 #elif defined(CFG_in866)
 # include "lmic_bandplan_in866.h"
 #else

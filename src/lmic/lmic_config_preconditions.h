@@ -99,7 +99,7 @@ Revision history:
                                 (1 << LMIC_REGION_eu868) |      \
                                 (1 << LMIC_REGION_us915) |      \
                              /* (1 << LMIC_REGION_cn783) | */   \
-                             /* (1 << LMIC_REGION_eu433) | */   \
+                                (1 << LMIC_REGION_eu433) |      \
                                 (1 << LMIC_REGION_au921) |      \
                              /* (1 << LMIC_REGION_cn490) | */   \
                                 (1 << LMIC_REGION_as923) |      \
