@@ -326,6 +326,54 @@ enum _dr_configured_t {
 };
 # endif // LMIC_DR_LEGACY
 
+#elif defined(CFG_kr921) // ==============================================
+
+#include "lorabase_kr921.h"
+
+// per 2.1.3: not implemented
+#define LMIC_ENABLE_TxParamSetupReq	0
+
+enum { DR_DFLTMIN = KR921_DR_SF7 };   // DR5
+                                      // DR_PAGE is a debugging parameter
+enum { DR_PAGE = DR_PAGE_KR921 };
+
+//enum { CHNL_PING         = 5 };
+enum { FREQ_PING = KR921_F6 };  // default ping freq
+enum { DR_PING = KR921_DR_SF9 };       // default ping DR
+                                       //enum { CHNL_DNW2         = 5 };
+enum { FREQ_DNW2 = KR921_F6 };
+enum { DR_DNW2 = KR921_DR_SF12 };
+enum { CHNL_BCN = 5 };
+enum { FREQ_BCN = KR921_F6 };
+enum { DR_BCN = KR921_DR_SF9 };
+enum { AIRTIME_BCN = 144384 };  // micros
+enum { LMIC_REGION_EIRP = KR921_LMIC_REGION_EIRP };         // region uses EIRP
+
+enum {
+        // Beacon frame format EU SF9
+        OFF_BCN_NETID = 0,
+        OFF_BCN_TIME = 3,
+        OFF_BCN_CRC1 = 7,
+        OFF_BCN_INFO = 8,
+        OFF_BCN_LAT = 9,
+        OFF_BCN_LON = 12,
+        OFF_BCN_CRC2 = 15,
+        LEN_BCN = 17
+};
+
+// for backwards compatibility. This must match _dr_kr921_t
+# if LMIC_DR_LEGACY
+enum _dr_configured_t {
+	DR_SF12 = KR921_DR_SF12,
+	DR_SF11 = KR921_DR_SF11,
+	DR_SF10 = KR921_DR_SF10,
+	DR_SF9  = KR921_DR_SF9,
+	DR_SF8  = KR921_DR_SF8,
+	DR_SF7  = KR921_DR_SF7,
+	DR_NONE = KR921_DR_NONE
+};
+# endif // LMIC_DR_LEGACY
+
 #elif defined(CFG_in866) // ==============================================
 
 #include "lorabase_in866.h"

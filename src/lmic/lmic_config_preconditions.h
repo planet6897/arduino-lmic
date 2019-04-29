@@ -103,7 +103,7 @@ Revision history:
                                 (1 << LMIC_REGION_au921) |      \
                              /* (1 << LMIC_REGION_cn490) | */   \
                                 (1 << LMIC_REGION_as923) |      \
-                             /* (1 << LMIC_REGION_kr921) | */   \
+                                (1 << LMIC_REGION_kr921) |      \
                                 (1 << LMIC_REGION_in866) |      \
                                 0)
 
